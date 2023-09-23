@@ -1,0 +1,40 @@
+.navbar {
+    background-color: #3498db; 
+    border-bottom: 2px solid #2980b9; 
+    border-radius: 0; 
+    margin-bottom: 20px; 
+    transition: background-color 0.3s ease; 
+  }
+  
+  .navbar-brand {
+    color: #3498db; 
+    font-weight: bold; 
+    font-size: 24px; 
+  }
+  
+  .navbar-toggler-icon {
+    background-color: #fff; 
+  }
+  
+  .nav-link {
+    display: inline-block;
+    margin-right: 10px;
+    color: #3498db; 
+    font-weight: bold; 
+    font-size: 18px; 
+    margin-right: 20px; 
+    transition: color 0.3s ease; 
+    text-decoration: none;
+  }
+  .nav-link.active {
+    text-decoration: underline;
+  }
+  
+  .nav-link:hover {
+    color: #5b5e7d;
+  }
+.navbar-nav {
+    margin: 0 auto;
+    display: table; 
+  }
+  

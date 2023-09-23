@@ -1,0 +1,8 @@
+<h2>Lista de Estudiantes:</h2>
+<ul>
+  <ng-container *ngFor="let student of students">
+    <li [ngStyle]="{'color': student.length < 5 ? 'red' : 'black'}">
+      {{ student.length < 5 ? (student | uppercase) : student }}
+    </li>
+  </ng-container>
+</ul>
