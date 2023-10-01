@@ -1,0 +1,46 @@
+<form [formGroup]="miForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email</label>
+      <input 
+      type="email" 
+      class="form-control" 
+      id="exampleInputEmail1" 
+      formControlName="email"
+      [class.is-invalid]="miForm.get('email')?.touched && miForm.get('email')?.invalid">
+      
+      <div *ngIf="miForm.get('email')?.invalid && miForm.get('email')?.touched" class="text-danger">
+        Email es obligatorio.
+        
+      </div>
+      <div *ngIf="miForm.get('email')?.hasError('email') && miForm.get('email')?.touched" class="text-danger">
+        Email no es válido.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+      <input 
+      type="password" 
+      class="form-control" 
+      id="exampleInputPassword1" 
+      formControlName="password"
+      [class.is-invalid]="miForm.get('password')?.touched && miForm.get('password')?.invalid">
+
+      <div *ngIf="miForm.get('password')?.invalid && miForm.get('password')?.touched" class="text-danger">
+        Contraseña es obligatorio.
+      </div>
+      <div *ngIf="miForm.get('password')?.hasError('minlength') && miForm.get('password')?.touched" class="text-danger">
+        La contraseña debe tener al menos 6 caracteres.
+      </div>
+    </div>
+    <div class="mb-3 form-check">
+      <input 
+      type="checkbox" 
+      class="form-check-input" 
+      id="exampleCheck1" 
+      formControlName="recordarme">
+
+      <label class="form-check-label" for="exampleCheck1">Recordarme</label>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!isFormValid">Submit</button>
+  </form>
+  

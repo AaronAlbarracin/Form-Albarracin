@@ -1,8 +1,10 @@
-<h2>Lista de Estudiantes:</h2>
-<ul>
-  <ng-container *ngFor="let student of students">
-    <li [ngStyle]="{'color': student.length < 5 ? 'red' : 'black'}">
-      {{ student.length < 5 ? (student | uppercase) : student }}
-    </li>
+
+
+<h2>Estudiantes:</h2>
+<ul class="contStudent">
+  <ng-container *ngFor="let student of students; let i = index">
+      <button class="student" [ngClass]="i % 2 === 0 ? 'even' : 'odd'">
+        {{ student }}
+      </button>
   </ng-container>
 </ul>

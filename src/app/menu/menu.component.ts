@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ListStudentComponent } from '../list-student/list-student.component';
 
 @Component({
   selector: 'app-menu',
