@@ -8,18 +8,24 @@ import { Component } from '@angular/core';
 })
 export class FormComponent {
 
-constructor(){}
+  constructor() { }
 
-miForm = new FormGroup({
-  email : new FormControl('', [Validators.required, Validators.email]),
-  password : new FormControl('', [Validators.required, Validators.minLength(6)]),
-  recordarme : new FormControl(false),
-});
-get isFormValid() {
-  return this.miForm.valid;
-}
+  miForm = new FormGroup({
+    nombre: new FormControl('', [Validators.required]),
+    apellido: new FormControl('', [Validators.required]),
+    documento: new FormControl('', [Validators.required]),
+    pais: new FormControl('', [Validators.required]),
+    ciudad: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+  });
 
-onSubmit() {
-  console.log('Estado del formulario:', this.miForm.value);
-}
+  get isFormValid() {
+    return this.miForm.valid;
+  }
+
+  onSubmit() {
+    console.log('Estado del formulario:', this.miForm.value);
+  }
+
 }

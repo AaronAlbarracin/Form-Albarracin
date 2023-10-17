@@ -1,4 +1,76 @@
+
+<h1>Registro de Estudiante</h1>
 <form [formGroup]="miForm" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="exampleInputName" class="form-label">Nombre</label>
+    <input 
+    type="text" 
+    class="form-control" 
+    id="exampleInputName" 
+    formControlName="nombre"
+    [class.is-invalid]="miForm.get('nombre')?.touched && miForm.get('nombre')?.invalid">
+    
+    <div *ngIf="miForm.get('nombre')?.invalid && miForm.get('nombre')?.touched" class="text-danger">
+      El nombre es obligatorio.
+    </div>
+  </div>
+  
+  <div class="mb-3">
+    <label for="exampleInputLastName" class="form-label">Apellido</label>
+    <input 
+    type="text" 
+    class="form-control" 
+    id="exampleInputLastLastName" 
+    formControlName="apellido"
+    [class.is-invalid]="miForm.get('apellido')?.touched && miForm.get('apellido')?.invalid">
+    
+    <div *ngIf="miForm.get('apellido')?.invalid && miForm.get('apellido')?.touched" class="text-danger">
+      Es obligatorio ingresar su apellido.
+    </div>
+  </div> 
+
+  <div class="mb-3">
+    <label for="exampleInputDocument" class="form-label">Documento</label>
+    <input 
+    type="number" 
+    class="form-control" 
+    id="exampleInputDocument" 
+    formControlName="documento"
+    [class.is-invalid]="miForm.get('documento')?.touched && miForm.get('documento')?.invalid">
+    
+    <div *ngIf="miForm.get('documento')?.invalid && miForm.get('documento')?.touched" class="text-danger">
+      Es obligatorio ingresar su documeto.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputCountry" class="form-label">Pais</label>
+    <input 
+    type="text" 
+    class="form-control" 
+    id="exampleInput" 
+    formControlName="pais"
+    [class.is-invalid]="miForm.get('ciudad')?.touched && miForm.get('pais')?.invalid">
+    
+    <div *ngIf="miForm.get('pais')?.invalid && miForm.get('pais')?.touched" class="text-danger">
+      Es obligatorio ingresar su pais.
+    </div>
+  </div> 
+  
+  <div class="mb-3">
+    <label for="exampleInputCity" class="form-label">Ciudad</label>
+    <input 
+    type="text" 
+    class="form-control" 
+    id="exampleInput" 
+    formControlName="ciudad"
+    [class.is-invalid]="miForm.get('ciudad')?.touched && miForm.get('ciudad')?.invalid">
+    
+    <div *ngIf="miForm.get('ciudad')?.invalid && miForm.get('ciudad')?.touched" class="text-danger">
+      Es obligatorio ingresar su ciudad.
+    </div>
+  </div>  
+
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Email</label>
       <input 
@@ -9,11 +81,11 @@
       [class.is-invalid]="miForm.get('email')?.touched && miForm.get('email')?.invalid">
       
       <div *ngIf="miForm.get('email')?.invalid && miForm.get('email')?.touched" class="text-danger">
-        Email es obligatorio.
+        el email es obligatorio.
         
       </div>
       <div *ngIf="miForm.get('email')?.hasError('email') && miForm.get('email')?.touched" class="text-danger">
-        Email no es válido.
+        Su email no es válido.
       </div>
     </div>
     <div class="mb-3">
@@ -26,21 +98,13 @@
       [class.is-invalid]="miForm.get('password')?.touched && miForm.get('password')?.invalid">
 
       <div *ngIf="miForm.get('password')?.invalid && miForm.get('password')?.touched" class="text-danger">
-        Contraseña es obligatorio.
+        La contraseña es obligatoria.
       </div>
       <div *ngIf="miForm.get('password')?.hasError('minlength') && miForm.get('password')?.touched" class="text-danger">
         La contraseña debe tener al menos 6 caracteres.
       </div>
     </div>
-    <div class="mb-3 form-check">
-      <input 
-      type="checkbox" 
-      class="form-check-input" 
-      id="exampleCheck1" 
-      formControlName="recordarme">
 
-      <label class="form-check-label" for="exampleCheck1">Recordarme</label>
-    </div>
     <button type="submit" class="btn btn-primary" [disabled]="!isFormValid">Submit</button>
   </form>
   

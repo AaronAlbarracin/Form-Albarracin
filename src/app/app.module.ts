@@ -8,6 +8,9 @@ import { ContentComponent } from './content/content.component';
 import { ListStudentComponent } from './list-student/list-student.component';
 import { FormComponent } from './form/form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UsersModule } from './users/users.module';
+
 
 @NgModule({
   declarations: [
@@ -16,11 +19,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     MenuComponent,
     ContentComponent,
     ListStudentComponent,
-    FormComponent
+    FormComponent,
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    UsersModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

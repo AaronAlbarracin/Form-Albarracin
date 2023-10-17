@@ -1,0 +1,11 @@
+.dialog {
+    background-color: #3498db;}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+}
+.form-group {
+    flex: 1;
+    margin-right: 10px; /* Ajusta el margen entre los campos Nombre y Apellido según tus preferencias */
+    }
