@@ -9,10 +9,12 @@ import { User } from '../../models';
 export class UserTableComponent {
   @Input()
   dataSource: User[] = [];
+
   @Output()
   deleteUser = new EventEmitter<number>();
+
+  @Output()
   editUser = new EventEmitter<User>();
 
   displayedColumns: string[] = ['id', 'curso', 'fullName', 'Actions'];
-
 }
