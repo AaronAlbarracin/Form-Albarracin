@@ -55,6 +55,17 @@ users: User[] = [
   onEditUser(user: User): void {
     this.matDialog.open(UsersDialogComponent, {
       data: user,
+    }).afterClosed().subscribe({
+      next: (v) => {
+        if (!!v) {
+        const arrayNuevo = [...this.users];
+
+        const indiceToEdit  = arrayNuevo.findIndex((u) => u.id === user.id);
+
+        arrayNuevo[indiceToEdit] = { ...arrayNuevo[indiceToEdit], ...v};
+        this.users = [...arrayNuevo];
+        } 
+      }
     });
   }
   
